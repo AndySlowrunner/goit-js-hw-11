@@ -1,0 +1,79 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #404bbf;
+}
+
+.gallery {
+    max-width: 1024px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo-card {
+    width: calc((100% - 10px)/3);
+    margin-bottom: 20px;
+
+}
+
+.photo-card img {
+    width: 100%;
+    height: auto;
+}
+
+.photo-card .info {
+    display: flex;
+    gap: 8px;
+    background: #f0f0f0;
+    padding: 10px;
+    height: 48px;
+}
+
+.info-key {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.info-value {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.info-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px auto;
+}
+
+.load-more {
+    display: none;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 16px;
+
+    border-radius: 4px;
+    background: #404bbf;
+    color: #E7E9FC;
+}
+
+.load-more:hover {
+    background: #333ebd;
+}
