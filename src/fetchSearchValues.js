@@ -2,7 +2,6 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import axios from "axios";
 import { renderResultsList } from './makeMarkup';
 
-let currentPage = 1;
 const loadMoreButton = document.querySelector('.load-more');
 
 export async function fetchSearchValues(searchQuery, page) {
@@ -11,14 +10,15 @@ export async function fetchSearchValues(searchQuery, page) {
         const { hits, totalHits } = response.data;
         if (hits.length > 0) {
             renderResultsList(hits);
-            if (currentPage * 40 < totalHits) {
+            if (page * 40 < totalHits) {
                 loadMoreButton.style.display = 'block';
-                Notify.success(`Hooray! We found ${totalHits} images.`)
-            } else {
+            }
+            else if (page * 40 >= totalHits) {
                 loadMoreButton.style.display = 'none';
                 Notify.failure("We're sorry, but you've reached the end of search results.");
             }
-        } else {
+        }
+        else {
             Notify.failure('Sorry, there are no images matching your search query. Please try again.');
         }
     } catch (error) {
